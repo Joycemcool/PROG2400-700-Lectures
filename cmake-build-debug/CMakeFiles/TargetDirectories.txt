@@ -1,0 +1,5 @@
+C:/Users/joyce/Documents/Code/C++/InClassBrian/PROG2400-700-Lectures/cmake-build-debug/CMakeFiles/echo.dir
+C:/Users/joyce/Documents/Code/C++/InClassBrian/PROG2400-700-Lectures/cmake-build-debug/CMakeFiles/command_line.dir
+C:/Users/joyce/Documents/Code/C++/InClassBrian/PROG2400-700-Lectures/cmake-build-debug/CMakeFiles/stringstreams.dir
+C:/Users/joyce/Documents/Code/C++/InClassBrian/PROG2400-700-Lectures/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joyce/Documents/Code/C++/InClassBrian/PROG2400-700-Lectures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
