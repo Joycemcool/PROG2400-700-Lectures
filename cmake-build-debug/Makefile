@@ -154,6 +154,19 @@ stringstreams/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stringstreams.dir\build.make CMakeFiles/stringstreams.dir/build
 .PHONY : stringstreams/fast
 
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 command_line/main.obj: command_line/main.cpp.obj
 .PHONY : command_line/main.obj
 
@@ -226,6 +239,30 @@ stringstreams/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stringstreams.dir\build.make CMakeFiles/stringstreams.dir/stringstreams/main.cpp.s
 .PHONY : stringstreams/main.cpp.s
 
+test/main.obj: test/main.cpp.obj
+.PHONY : test/main.obj
+
+# target to build an object file
+test/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test/main.cpp.obj
+.PHONY : test/main.cpp.obj
+
+test/main.i: test/main.cpp.i
+.PHONY : test/main.i
+
+# target to preprocess a source file
+test/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test/main.cpp.i
+.PHONY : test/main.cpp.i
+
+test/main.s: test/main.cpp.s
+.PHONY : test/main.s
+
+# target to generate assembly for a file
+test/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test/main.cpp.s
+.PHONY : test/main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -237,6 +274,7 @@ help:
 	@echo ... command_line
 	@echo ... echo
 	@echo ... stringstreams
+	@echo ... test
 	@echo ... command_line/main.obj
 	@echo ... command_line/main.i
 	@echo ... command_line/main.s
@@ -246,6 +284,9 @@ help:
 	@echo ... stringstreams/main.obj
 	@echo ... stringstreams/main.i
 	@echo ... stringstreams/main.s
+	@echo ... test/main.obj
+	@echo ... test/main.i
+	@echo ... test/main.s
 .PHONY : help
 
 

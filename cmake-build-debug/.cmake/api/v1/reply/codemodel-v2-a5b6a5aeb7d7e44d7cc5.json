@@ -17,7 +17,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -34,7 +35,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -59,6 +61,13 @@
 					"id" : "stringstreams::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-stringstreams-Debug-f9d5b60716ab23e81693.json",
 					"name" : "stringstreams",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-895db41b41a39a6eddda.json",
+					"name" : "test",
 					"projectIndex" : 0
 				}
 			]
