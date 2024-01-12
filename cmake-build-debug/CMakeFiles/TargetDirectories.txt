@@ -1,5 +1,6 @@
 C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/echo.dir
 C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/command_line.dir
 C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/stringstreams.dir
+C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/pointers.dir
 C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/W0471965/CLionProjects/InClassFollowUp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -154,6 +154,19 @@ stringstreams/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stringstreams.dir\build.make CMakeFiles/stringstreams.dir/build
 .PHONY : stringstreams/fast
 
+#=============================================================================
+# Target rules for targets named pointers
+
+# Build rule for target.
+pointers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pointers
+.PHONY : pointers
+
+# fast build rule for target.
+pointers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pointers.dir\build.make CMakeFiles/pointers.dir/build
+.PHONY : pointers/fast
+
 command_line/main.obj: command_line/main.cpp.obj
 .PHONY : command_line/main.obj
 
@@ -202,6 +215,33 @@ echo/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\echo.dir\build.make CMakeFiles/echo.dir/echo/main.cpp.s
 .PHONY : echo/main.cpp.s
 
+pointers/main.obj: pointers/main.cpp.obj
+.PHONY : pointers/main.obj
+
+# target to build an object file
+pointers/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\command_line.dir\build.make CMakeFiles/command_line.dir/pointers/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pointers.dir\build.make CMakeFiles/pointers.dir/pointers/main.cpp.obj
+.PHONY : pointers/main.cpp.obj
+
+pointers/main.i: pointers/main.cpp.i
+.PHONY : pointers/main.i
+
+# target to preprocess a source file
+pointers/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\command_line.dir\build.make CMakeFiles/command_line.dir/pointers/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pointers.dir\build.make CMakeFiles/pointers.dir/pointers/main.cpp.i
+.PHONY : pointers/main.cpp.i
+
+pointers/main.s: pointers/main.cpp.s
+.PHONY : pointers/main.s
+
+# target to generate assembly for a file
+pointers/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\command_line.dir\build.make CMakeFiles/command_line.dir/pointers/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pointers.dir\build.make CMakeFiles/pointers.dir/pointers/main.cpp.s
+.PHONY : pointers/main.cpp.s
+
 stringstreams/main.obj: stringstreams/main.cpp.obj
 .PHONY : stringstreams/main.obj
 
@@ -236,6 +276,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... command_line
 	@echo ... echo
+	@echo ... pointers
 	@echo ... stringstreams
 	@echo ... command_line/main.obj
 	@echo ... command_line/main.i
@@ -243,6 +284,9 @@ help:
 	@echo ... echo/main.obj
 	@echo ... echo/main.i
 	@echo ... echo/main.s
+	@echo ... pointers/main.obj
+	@echo ... pointers/main.i
+	@echo ... pointers/main.s
 	@echo ... stringstreams/main.obj
 	@echo ... stringstreams/main.i
 	@echo ... stringstreams/main.s

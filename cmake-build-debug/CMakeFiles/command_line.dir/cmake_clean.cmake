@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/command_line.dir/command_line/main.cpp.obj"
   "CMakeFiles/command_line.dir/command_line/main.cpp.obj.d"
+  "CMakeFiles/command_line.dir/pointers/main.cpp.obj"
+  "CMakeFiles/command_line.dir/pointers/main.cpp.obj.d"
   "command_line.exe"
   "command_line.exe.manifest"
   "command_line.pdb"
