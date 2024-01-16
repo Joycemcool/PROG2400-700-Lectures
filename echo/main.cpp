@@ -1,6 +1,8 @@
-#include <iostream>
+#include "echo_application.h"
 
 int main() {
-    std::cout << "Hello World" << std::endl;
+    EchoApplication app(std::cin, std::cout);
+    app.run();
+
     return 0;
 }
