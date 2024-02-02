@@ -1,32 +1,44 @@
 #include <iostream>
+#include <memory>
+
+struct Student {
+    std::string _name {"uninitialized"};
+    std::string _id {"W999999"};
+};
+std::ostream& operator<<(std::ostream& output, const Student& student) {
+    output << "Name: " << student._name << ", ID: " << student._id;
+    return output;
+}
 
 struct Node {
-    int _data {-1};
-    Node* _next {nullptr};
+    Student _data;
+    std::unique_ptr<Node> _next {nullptr};
 };
 
 class Queue {
-    Node* _front {nullptr};
+    std::unique_ptr<Node> _front {nullptr};
     Node* _back {nullptr};
     size_t _size {0};
 public:
-    void push_back(int num) {
-        auto const node = new Node({num});
+    void push_back(const Student& student) {
+        auto node = std::make_unique<Node>(student);
 
         // is this the first node?
         if (_front == nullptr) {
             // yes, this is the first node
-            _front = node;
+            _front = std::move(node);
+            _back = _front.get();
         } else {
             // no, this is another node
-            _back->_next = node;
+            _back->_next = std::move(node);
+            _back = _back->_next.get();
         }
-        _back = node;
+
         _size++;
     }
 
-    [[nodiscard]] int peek() const {
-        return _front != nullptr ? _front->_data : -1;
+    [[nodiscard]] Student peek() const {
+        return _front != nullptr ? _front->_data : Student();
     }
 
     [[nodiscard]] size_t size() const {
@@ -34,17 +46,15 @@ public:
     }
 
     void pop_front() {
-        auto node = _front;
+        auto node = std::move(_front);
 
         // disconnect front node from chain
-        _front = _front->_next;
+        _front = std::move(node->_next);
 
         // if we remove the only node, update the back pointer as well
         if (_front == nullptr) {
             _back = nullptr;
         }
-
-        delete node;
 
         _size--;
     }
@@ -53,11 +63,11 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& output, const Queue& queue) {
-    auto node = queue._front;
+    auto node = queue._front.get();
 
     while (node != nullptr) {
-        output << node->_data << " ";
-        node = node->_next;
+        output << node->_data << std::endl;
+        node = node->_next.get();
     }
     return output;
 }
@@ -70,11 +80,11 @@ int main() {
     std::cout << "Test 1: add nodes to the end of a queue" << std::endl;
     std::cout << "---------------------------------------" << std::endl;
 
-    queue.push_back(1);
-    queue.push_back(2);
-    queue.push_back(3);
-    queue.push_back(4);
-    queue.push_back(5);
+    queue.push_back({"John Smith", "W111111"});
+    queue.push_back({"Jane Doe", "W222222"});
+    queue.push_back({"Jill Hill", "W333333"});
+    queue.push_back({"Jack Sprat", "W444444"});
+    queue.push_back({"Bill Hill", "W555555"});
 
     std::cout << queue << std::endl;
 
